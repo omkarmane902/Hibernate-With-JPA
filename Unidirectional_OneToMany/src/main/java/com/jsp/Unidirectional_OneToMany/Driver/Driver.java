@@ -1,14 +1,15 @@
 package com.jsp.Unidirectional_OneToMany.Driver;
 
+import java.util.Arrays;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import com.jsp.Unidirectional_OneToMany.Entity.Department;
-import com.jsp.Unidirectional_OneToMany.Entity.Employee;
-
-
+import com.jsp.Unidirectional_OneToMany.Entity.College;
+import com.jsp.Unidirectional_OneToMany.Entity.Teacher;
 
 public class Driver {
 
@@ -18,24 +19,29 @@ public class Driver {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction et = em.getTransaction();
 		
-		Department d1 = new Department(1, "Tester", 3);
-		Department d2 = new Department(2, "Backend Developer", 5);
-		Department d3 = new Department(3, "Frontend Developer", 8);
 		
+
 		
-        Employee e1 = new Employee(1, "omkar", 18, d3);
-        Employee e2 = new Employee(2, "Chinamay", 22, d2);
-        Employee e3 = new Employee(3, "Rahul", 18, d1);
+		Teacher t1 = new Teacher(1, "Sahinat", 2);
+		Teacher t2 = new Teacher(2, "Omkar", 5);
+		Teacher t3 = new Teacher(3, "abhi", 1);
 		
+		List<Teacher> list1 = Arrays.asList(t1,t2);
+		List<Teacher> list2 = Arrays.asList(t3);
 		
+		 College c1 = new College(1, "NMCE", "A++", list1);
+		 College c2 = new College(2, "COP", "B+",list2 );
+		 
 		
 		et.begin();
-		em.persist(d1);
-		em.persist(d2);
-		em.persist(d3);
-		em.persist(e1);
-		em.persist(e2);
-		em.persist(e3);
+		    em.persist(t1);
+		    em.persist(t2);
+		    em.persist(t3);
+			em.persist(c1);
+			em.persist(c2);
+			
+		
 		et.commit();
+		
 	}
 }

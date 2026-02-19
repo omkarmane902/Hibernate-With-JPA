@@ -4,8 +4,7 @@
   <artifactId>Unidirectional_OneToMany</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  
-   <dependencies>
+     <dependencies>
   <!-- Source: https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
@@ -20,5 +19,6 @@
 			<version>42.7.3</version>
 		</dependency>
    </dependencies>
+
   
 </project>
