@@ -1,0 +1,51 @@
+package com.jspUnidirectional_ManyToMany;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Book {
+
+	
+	@Id
+	private int id;
+	private String bookname;
+	private double price;
+	
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Book(int id, String bookname, double price) {
+		super();
+		this.id = id;
+		this.bookname = bookname;
+		this.price = price;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getBookname() {
+		return bookname;
+	}
+
+	public void setBookname(String bookname) {
+		this.bookname = bookname;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	
+}
